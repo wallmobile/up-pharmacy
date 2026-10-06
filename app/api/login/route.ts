@@ -1,0 +1,1 @@
+import {NextResponse} from 'next/server';export async function POST(req:Request){const {email,password}=await req.json();if(email==='admin@demo.local'&&password==='Demo@1234')return NextResponse.json({ok:true,user:{email,role:'admin'}});return NextResponse.json({ok:false,error:'Invalid demo credentials'},{status:401})}
